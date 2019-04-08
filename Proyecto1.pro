@@ -39,3 +39,13 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    Coca Cola Logo.jpg \
+    Coca Cola Logo.jpg \
+    ../../../Desktop/Coca Cola Logo.jpg \
+    ../../../Desktop/Coca Cola Logo.jpg \
+    ../../../Desktop/Coca Cola Logo.jpg
+
+RESOURCES += \
+    images.qrc

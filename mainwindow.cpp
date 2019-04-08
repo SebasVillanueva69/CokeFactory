@@ -6,8 +6,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    QPixmap coca("C:/Users/Sebas Villanueva/Documents/TEC SEMESTRE 3/Estructuras/ProyectoCoca/Coca Cola Logo.jpg");
-    ui->label->setPixmap(coca);
+
+    //QPixmap coca();
+    ui->label->setPixmap(QPixmap(":/new/prefix1/Coca Cola Logo.jpg"));
 }
 
 MainWindow::~MainWindow()
