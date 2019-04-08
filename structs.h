@@ -6,9 +6,10 @@ using namespace std;
 
 struct Botella
 {
-    string nombre;
-    string capacidad;
-
+    string capacity;
+    string name;
+    bool isEmpty;
+    bool isClean;
 
 };
 
