@@ -1,5 +1,15 @@
 <RCC>
     <qresource prefix="/new/prefix1">
+        <file>cleanReady.gif</file>
+        <file>setter.png</file>
         <file>Coca Cola Logo.jpg</file>
+        <file>toFill1.gif</file>
+        <file>toFill2.gif</file>
+        <file>cleanMachine.gif</file>
+        <file>filled1.gif</file>
+        <file>filled2.gif</file>
+        <file>capperMachine.gif</file>
+        <file>checker.png</file>
+        <file>allMachine.png</file>
     </qresource>
 </RCC>
