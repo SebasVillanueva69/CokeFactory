@@ -31,6 +31,7 @@ struct Node
 {
     Bottle *data = nullptr;
     Node *next = nullptr;
+    Node *prev = nullptr;
     Node(Bottle* data) {
         this->data = data;
     }
@@ -78,7 +79,32 @@ struct Queue
 
 };
 
+struct doubleLinkedList
+{
+    Node *first;
+    doubleLinkedList()
+    {
+        first = nullptr;
+    }
 
+    void insertAtHead(Node bottle)
+    {
+        if (first == nullptr)
+        {
+            first = new Node(bottle);
+            first->prev = first;
+            first->next = first;
+        }
+        else
+        {
+            Node *n = new Node(bottle);
+            n->next = first;
+            n->prev = first->prev;
+            n->prev->next = n;
+            first->prev = n;
+        }
+    }
+};
 struct Person
 {
     string type; //Carga o inspeccionan
