@@ -27,20 +27,16 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    setterthread.cpp \
-    cleanerthread.cpp \
-    fillerthread.cpp \
-    capperthread.cpp \
-    checkerthread.cpp
+    fillerworker.cpp \
+    cleanerworker.cpp \
+    capperworker.cpp
 
 HEADERS += \
         mainwindow.h \
     structs.h \
-    setterthread.h \
-    cleanerthread.h \
-    fillerthread.h \
-    capperthread.h \
-    checkerthread.h
+    fillerworker.h \
+    cleanerworker.h \
+    capperworker.h
 
 FORMS += \
         mainwindow.ui

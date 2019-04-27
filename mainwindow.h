@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include "QMovie"
+#include "structs.h"
+
 
 namespace Ui {
 class MainWindow;
@@ -30,6 +32,7 @@ private slots:
     void start();
     void pause();
     void stop();
+
 private:
     Ui::MainWindow *ui;
 };
