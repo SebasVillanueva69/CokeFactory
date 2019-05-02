@@ -2206,27 +2206,27 @@
     </property>
     <row>
      <property name="text">
-      <string>New Row</string>
+      <string>Status</string>
      </property>
     </row>
     <row>
      <property name="text">
-      <string>New Row</string>
+      <string>Speed</string>
      </property>
     </row>
     <row>
      <property name="text">
-      <string>New Row</string>
+      <string>Pitufas</string>
      </property>
     </row>
     <row>
      <property name="text">
-      <string>New Row</string>
+      <string>1/2 litros</string>
      </property>
     </row>
     <row>
      <property name="text">
-      <string>New Row</string>
+      <string>2 litros</string>
      </property>
     </row>
     <column>
