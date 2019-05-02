@@ -8,6 +8,8 @@ struct Truck
 {
 public:
     Truck(string type);
+
+
 };
 
 #endif // TRUCK_H

@@ -15,6 +15,7 @@ public:
     bool isCap = false; //Se tapan
     bool isCheck = false; //Se inspeccionan
     bool isReady = false; //Se encajan
+
 };
 
 #endif // BOTTLE_H

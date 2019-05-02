@@ -11,12 +11,13 @@ public:
     void changeSpeed(int speed);
     void changeStatus(int status);
     int startMachine(Bottle *bottle);
-
+    void setBand()
     string type;//clean, fill, cap,
     Queue* band1 = nullptr;
     Queue* band2 = nullptr;
     int speed;
     int status = 0; //0 = OFF, 1 = ON, 2 = PAUSE
+
 };
 
 #endif // MACHINE_H

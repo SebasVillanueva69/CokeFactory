@@ -10,6 +10,7 @@ public:
     Node *next = nullptr;
     Node *prev = nullptr;
 
+
 };
 
 #endif // NODE_H

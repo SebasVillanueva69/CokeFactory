@@ -10,6 +10,7 @@ public:
     int per;
      NodeList *next = nullptr;
      NodeList *prev = nullptr;
+
 };
 
 #endif // NODELIST_H

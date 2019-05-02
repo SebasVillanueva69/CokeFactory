@@ -16,7 +16,8 @@ public:
     void changeSpeed(int newSpeed);
     void changeStatus(int newStatus);
     void startWork(Bottle* bottle);
-    void setBand(Queue* band)
+    void setBand(Queue* band);
+
 };
 
 #endif // PERSON_H

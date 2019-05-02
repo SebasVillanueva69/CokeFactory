@@ -11,6 +11,7 @@ public:
     NodeList *first;
 
     void insert(string type, int per);
+
 };
 
 #endif // DOUBLELINKEDLIST_H
