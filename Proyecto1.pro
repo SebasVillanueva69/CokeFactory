@@ -27,19 +27,18 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    fillerworker.cpp \
     cleanerworker.cpp \
-    capperworker.cpp
+    firstwindow.cpp
 
 HEADERS += \
         mainwindow.h \
     structs.h \
-    fillerworker.h \
     cleanerworker.h \
-    capperworker.h
+    firstwindow.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    firstwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
