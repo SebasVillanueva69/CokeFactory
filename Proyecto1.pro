@@ -25,16 +25,30 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-        main.cpp \
-        mainwindow.cpp \
-    cleanerworker.cpp \
+    main.cpp \
+    mainwindow.cpp \
     firstwindow.cpp
+    bottle.cpp \
+    machine.cpp \
+    queue.cpp \
+    node.cpp \
+    doublelinkedlist.cpp \
+    nodelist.cpp \
+    person.cpp \
+    truck.cpp
 
 HEADERS += \
-        mainwindow.h \
+    mainwindow.h \
     structs.h \
-    cleanerworker.h \
     firstwindow.h
+    bottle.h \
+    machine.h \
+    queue.h \
+    node.h \
+    doublelinkedlist.h \
+    nodelist.h \
+    person.h \
+    truck.h
 
 FORMS += \
         mainwindow.ui \

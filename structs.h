@@ -11,21 +11,6 @@
 
 using namespace std;
 
-
-struct Bottle
-{
-    string type; //PITUFA(250ml), 1/2LITROS(500ml), 2LITROS(2000ml)
-
-    bool isClean = false; //Pasa por limpia botellas
-    bool isEmpty = true; //Llenan
-    bool isCap = false; //Se tapan
-    bool isCheck = false; //Se inspeccionan
-    bool isReady = false; //Se encajan
-
-    Bottle(string type) {
-        this->type = type;
-    }
-};
 //--------------BIG DATA STRUCTS
 struct Node
 {
@@ -63,6 +48,7 @@ struct Queue
         cout<<"salio de la cola"<<endl;
         return toReturn;
     }
+
     void enqueue(Node* newBottle){
         count++;
         if(first == nullptr){
@@ -76,6 +62,7 @@ struct Queue
         }
         cout<<"entro a la cola"<<endl;
     }
+
     bool isFull(){
         if(count == limit){
             cout<<"esta lleno"<<endl;
@@ -185,7 +172,6 @@ struct Machine
     string type;//clean, fill, cap,
     Queue* band1 = nullptr;
     Queue* band2 = nullptr;
-    std::vector<int> counters = {0,0,0}; //0 = pitufas, 1 = 1/2litro, 2 = 2litros
     int speed;
     int status = 0; //0 = OFF, 1 = ON, 2 = PAUSE
     Machine(string type, int speed) {
