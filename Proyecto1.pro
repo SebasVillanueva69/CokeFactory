@@ -26,11 +26,17 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    fillerworker.cpp \
+    cleanerworker.cpp \
+    capperworker.cpp
 
 HEADERS += \
         mainwindow.h \
-    structs.h
+    structs.h \
+    fillerworker.h \
+    cleanerworker.h \
+    capperworker.h
 
 FORMS += \
         mainwindow.ui
