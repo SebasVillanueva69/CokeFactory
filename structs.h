@@ -16,15 +16,23 @@ struct Node
 {
     Bottle *data = nullptr;
     Node *next = nullptr;
-    Node *prev = nullptr;
     Node(Bottle* data) {
         this->data = data;
     }
 };
-
+struct NodeList
+{
+    string type;
+    int per;
+    NodeList *next = nullptr;
+    NodeList *prev = nullptr;
+    NodeList(string type, int per) {
+        this->type = type;
+        this->per = per;
+    }
+};
 struct Queue
 {
-
     int count;
     int limit;
     Node* first = nullptr;
@@ -68,27 +76,48 @@ struct Queue
 
 struct doubleLinkedList
 {
-    Node *first;
-    doubleLinkedList()
-    {
+    NodeList *first;
+    doubleLinkedList(){
         first = nullptr;
     }
-
-    void insertAtHead(Node bottle)
-    {
-        if (first == nullptr)
-        {
-            first = new Node(bottle);
+    void insert(string type, int per){
+        NodeList *node = new NodeList(type, per);
+        if(first == nullptr){
+            first = node;
             first->prev = first;
             first->next = first;
+        }else{
+            first->prev->next = node;
+            node->prev = first->prev;
+            node->next = first;
+            first->prev = node;
         }
-        else
-        {
-            Node *n = new Node(bottle);
-            n->next = first;
-            n->prev = first->prev;
-            n->prev->next = n;
-            first->prev = n;
+    }
+    Bottle* search(int p){
+        NodeList* temp = first;
+        int c = 0;
+        while(temp){
+            c = c + temp->per;
+            if(p <= c){
+                return new Bottle(temp->type);
+            }
+            if(temp->next == first){
+                return nullptr;
+            }
+            temp = temp->next;
+        }
+    }
+    bool check(){
+        NodeList* temp = first;
+        int total = 0;
+        while(temp->next != first){
+            total = total + temp->per;
+        }
+        if(total != 100){
+            return false;
+        }
+        else {
+            return true;
         }
     }
 };
