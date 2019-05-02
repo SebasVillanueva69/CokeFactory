@@ -3,7 +3,6 @@
 
 #include <QMainWindow>
 #include "QMovie"
-#include "structs.h"
 
 
 namespace Ui {

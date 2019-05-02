@@ -11,7 +11,8 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = Proyecto1
 TEMPLATE = app
 
-# The following define makes your compiler emit warnings if you use
+# The fol
+#lowing define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
 # depend on your compiler). Please consult the documentation of the
 # deprecated API in order to know how to port your code away from it.
@@ -27,7 +28,6 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    cleanerworker.cpp \
     bottle.cpp \
     machine.cpp \
     queue.cpp \
@@ -35,11 +35,11 @@ SOURCES += \
     doublelinkedlist.cpp \
     nodelist.cpp \
     person.cpp \
-    truck.cpp
+    truck.cpp \
+    firstwindow.cpp
 
 HEADERS += \
         mainwindow.h \
-    cleanerworker.h \
     bottle.h \
     machine.h \
     queue.h \
@@ -47,10 +47,12 @@ HEADERS += \
     doublelinkedlist.h \
     nodelist.h \
     person.h \
-    truck.h
+    truck.h \
+    firstwindow.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+        firstwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
