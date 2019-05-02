@@ -27,16 +27,28 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    fillerworker.cpp \
     cleanerworker.cpp \
-    capperworker.cpp
+    bottle.cpp \
+    machine.cpp \
+    queue.cpp \
+    node.cpp \
+    doublelinkedlist.cpp \
+    nodelist.cpp \
+    person.cpp \
+    truck.cpp
 
 HEADERS += \
         mainwindow.h \
     structs.h \
-    fillerworker.h \
     cleanerworker.h \
-    capperworker.h
+    bottle.h \
+    machine.h \
+    queue.h \
+    node.h \
+    doublelinkedlist.h \
+    nodelist.h \
+    person.h \
+    truck.h
 
 FORMS += \
         mainwindow.ui

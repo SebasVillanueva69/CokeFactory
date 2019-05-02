@@ -3,36 +3,45 @@
 #include <QWaitCondition>
 #include <QThread>
 #include <QDebug>
-cleanerWorker::cleanerWorker(QObject *parent) : QObject(parent)
-{
+#include "cstdlib"
 
+cleanerWorker::cleanerWorker(QThread *parent) : QThread(parent)
+{
 }
 
-void cleanerWorker::doSetup(QThread &thread)
+void cleanerWorker::run()
 {
-    connect(&thread,SIGNAL(started()), this, SLOT(doWork()));
-}
-
-void cleanerWorker::doWork()
-{
-    while (this->stopped == false)
+    while(this->stopped != true)
     {
         QMutex mutex;
-        QWaitCondition pause;
-
         mutex.lock();
-        botella = prevQ->dequeue();
-        qDebug("Se ha sacado de la banda");
-        botella->data->isClean = true;
 
-        if (nextQ->isFull() && nextQ2)
+        botella = prevQ->dequeue();
+
+        botella->data->isClean = true;
+        int banda = rand() %2;
+
+        if (banda == 0)
         {
-            pause.wait(&mutex);
+            if (nextQ->isFull())
+            {
+
+            }
+            else {
+                nextQ->enqueue(botella);
+            }
         }
-        else {
-            nextQ->enqueue(botella);
-            qDebug("Se ha metido con exito");
+        else{
+            if (nextQ2->isFull())
+            {
+
+            }
+            else {
+                nextQ2->enqueue(botella);
+            }
         }
+
         mutex.unlock();
+
     }
 }

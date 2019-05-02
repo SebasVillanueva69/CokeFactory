@@ -4,21 +4,22 @@
 #include <QObject>
 #include <QtCore>
 
-class cleanerWorker : public QObject
+class cleanerWorker : public QThread
 {
     Q_OBJECT
 public:
-    explicit cleanerWorker(QObject *parent = nullptr);
-    void doSetup(QThread &thread);
+    explicit cleanerWorker(QThread *parent = nullptr);
+    void run();
     Node *botella;
     Queue *prevQ;
     Queue *nextQ;
     Queue *nextQ2;
     bool stopped = false;
+    int speed;
 signals:
 
 public slots:
-    void doWork();
+
 };
 
 #endif // CLEANERWORKER_H
