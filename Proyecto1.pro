@@ -25,9 +25,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-    main.cpp \
-    mainwindow.cpp \
-    firstwindow.cpp
+        main.cpp \
+        mainwindow.cpp \
+    cleanerworker.cpp \
     bottle.cpp \
     machine.cpp \
     queue.cpp \
@@ -38,9 +38,9 @@ SOURCES += \
     truck.cpp
 
 HEADERS += \
-    mainwindow.h \
+        mainwindow.h \
     structs.h \
-    firstwindow.h
+    cleanerworker.h \
     bottle.h \
     machine.h \
     queue.h \
@@ -51,8 +51,7 @@ HEADERS += \
     truck.h
 
 FORMS += \
-        mainwindow.ui \
-    firstwindow.ui
+        mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
