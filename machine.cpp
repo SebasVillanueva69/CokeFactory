@@ -22,6 +22,13 @@ void Machine::changeStatus(int status)
 {
     this->status = status;
 }
+void Machine:: setBand(Queue* band){
+        if(this->band1 != nullptr){
+            this->band2 = band;
+        }else{
+            this->band1 = band;
+        }
+    }
 
 int Machine:: startMachine(Bottle* bottle)
 {
@@ -74,12 +81,4 @@ int Machine:: startMachine(Bottle* bottle)
         return 1;
     }
 
-void Machine:: setBand(Queue* band){
-        if(this->band1 != nullptr){
-            this->band2 = band;
-        }else{
-            this->band1 = band;
-        }
-    }
-
-}
+};

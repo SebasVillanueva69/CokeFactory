@@ -2,6 +2,7 @@
 #define MACHINE_H
 #include <string>
 #include "bottle.h"
+#include "queue.h"
 using namespace std;
 
 struct Machine
@@ -11,7 +12,7 @@ public:
     void changeSpeed(int speed);
     void changeStatus(int status);
     int startMachine(Bottle *bottle);
-    void setBand()
+    void setBand(Queue* band);
     string type;//clean, fill, cap,
     Queue* band1 = nullptr;
     Queue* band2 = nullptr;

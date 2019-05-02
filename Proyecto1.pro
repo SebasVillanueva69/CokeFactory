@@ -39,7 +39,6 @@ SOURCES += \
 
 HEADERS += \
         mainwindow.h \
-    structs.h \
     cleanerworker.h \
     bottle.h \
     machine.h \
