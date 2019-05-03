@@ -36,7 +36,11 @@ SOURCES += \
     nodelist.cpp \
     person.cpp \
     truck.cpp \
-    firstwindow.cpp
+    firstwindow.cpp \
+    cleanerworker.cpp \
+    fillerworker.cpp \
+    capperworker.cpp \
+    testthread.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -48,7 +52,11 @@ HEADERS += \
     nodelist.h \
     person.h \
     truck.h \
-    firstwindow.h
+    firstwindow.h \
+    cleanerworker.h \
+    fillerworker.h \
+    capperworker.h \
+    testthread.h
 
 FORMS += \
         mainwindow.ui \
