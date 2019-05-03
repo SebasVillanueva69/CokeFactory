@@ -39,13 +39,12 @@ bool doubleLinkedList::check(){
     int total = 0;
     while(temp->next != first){
         total = total + temp->per;
-
-        if(total != 100){
-            return false;
-        }
-        else {
-            return true;
-        }
+    }
+    if(total != 100){
+        return false;
+    }
+    else {
+        return true;
     }
 }
 
