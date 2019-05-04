@@ -2,13 +2,16 @@
 #include "ui_mainwindow.h"
 #include "QMovie"
 #include "QLabel"
+#include "test.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    test = new Test(this);
 
+    connect(test,SIGNAL(bottleTaken(int)),this,SLOT(onBottleTaken(int)));
     connect(ui->play, SIGNAL (released()),this, SLOT (start()));
     connect(ui->pause, SIGNAL (released()),this, SLOT (pause()));
     connect(ui->stop, SIGNAL (released()),this, SLOT (stop()));
@@ -60,6 +63,7 @@ void MainWindow::start(){
      filled1->start();
      filled2->start();
      cap->start();
+     test->start();
 }
 void MainWindow::pause(){
     //APAGA COLORES DE BOTONES SI ESTA ENCEDIDOS
@@ -88,8 +92,15 @@ void MainWindow::stop(){
      filled1->stop();
      filled2->stop();
      cap->stop();
+
+}
+
+void MainWindow::onBottleTaken(int i)
+{
+    ui->numero->setText(QString::number(i));
 }
 MainWindow::~MainWindow()
 {
     delete ui;
 }
+

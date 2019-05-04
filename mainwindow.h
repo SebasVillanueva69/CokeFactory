@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include "QMovie"
-
+#include "test.h"
 
 namespace Ui {
 class MainWindow;
@@ -26,11 +26,13 @@ public:
     QMovie *filled2 = new QMovie(":/new/prefix1/filled2.gif");//TERCER GIF ABAJO, MAQUINA
 
     QMovie *cap = new QMovie(":/new/prefix1/capperMachine.gif");//CUARTO GIF, MAQUINA DE TAPADO
-
+    Test *test;
 private slots:
     void start();
     void pause();
     void stop();
+    void onBottleTaken(int);
+    void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;
