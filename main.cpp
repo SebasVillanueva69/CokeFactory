@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
     w.show();
 
     //firstWindow w;
-    //w.show();
+    w.show();
 
     return a.exec();
 }
