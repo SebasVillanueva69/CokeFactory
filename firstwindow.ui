@@ -59,38 +59,19 @@
         </widget>
        </item>
        <item>
+        <widget class="QPlainTextEdit" name="tipo"/>
+       </item>
+       <item>
         <widget class="QLabel" name="label_2">
          <property name="text">
           <string>Probabilidad:</string>
          </property>
         </widget>
        </item>
+       <item>
+        <widget class="QPlainTextEdit" name="proba"/>
+       </item>
       </layout>
-     </item>
-     <item>
-      <widget class="QWidget" name="horizontalWidget" native="true">
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <property name="sizeConstraint">
-         <enum>QLayout::SetMinimumSize</enum>
-        </property>
-        <item>
-         <widget class="QPlainTextEdit" name="tipo">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="sizeAdjustPolicy">
-           <enum>QAbstractScrollArea::AdjustIgnored</enum>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPlainTextEdit" name="proba"/>
-        </item>
-       </layout>
-      </widget>
      </item>
      <item>
       <widget class="QPushButton" name="add">

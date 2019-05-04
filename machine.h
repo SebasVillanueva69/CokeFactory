@@ -1,23 +1,30 @@
-#ifndef MACHINE_H
+#ifndef MACHE_H
 #define MACHINE_H
+#include <QObject>
 #include <string>
+#include <QtCore>
 #include "bottle.h"
 #include "queue.h"
-using namespace std;
 
-struct Machine
+class Machine : public QThread
 {
+     Q_OBJECT
 public:
-    Machine(string type, int speed);
+    explicit Machine(string type, int speed,QObject *parent = nullptr);
     void changeSpeed(int speed);
     void changeStatus(int status);
-    int startMachine(Bottle *bottle);
-    void setBand(Queue* band);
+    void run();
+    void setBandNext(Queue* band);
+    void setBandPrev(Queue* band);
     string type;//clean, fill, cap,
-    Queue* band1 = nullptr;
-    Queue* band2 = nullptr;
+    Queue* band1n = nullptr;
+    Queue* band2n = nullptr;
+    Queue* band1p = nullptr;
+    Queue* band2p = nullptr;
     int speed;
     int status = 0; //0 = OFF, 1 = ON, 2 = PAUSE
+signals:
+public slots:
 
 };
 

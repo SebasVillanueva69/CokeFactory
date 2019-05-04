@@ -4,6 +4,9 @@
 #include <QMainWindow>
 #include "QMovie"
 #include "test.h"
+#include "person.h"
+#include "machine.h"
+#include "queue.h"
 
 namespace Ui {
 class MainWindow;
@@ -26,16 +29,36 @@ public:
     QMovie *filled2 = new QMovie(":/new/prefix1/filled2.gif");//TERCER GIF ABAJO, MAQUINA
 
     QMovie *cap = new QMovie(":/new/prefix1/capperMachine.gif");//CUARTO GIF, MAQUINA DE TAPADO
+
+    doubleLinkedList *types;
+
     Test *test;
+
+    Person *setter;
+    Person *checker;
+
+    Machine *cleaner;
+    Machine *filler1;
+    Machine *filler2;
+    Machine *capper;
+
+    Queue *queue1;
+    Queue *queue2;
+    Queue *queue3;
+    Queue *queue4;
+    Queue *queue5;
+    Queue *queue6;
+
 private slots:
     void start();
     void pause();
     void stop();
     void onBottleTaken(int);
-    void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;
+signals:
+    void status(int);
 };
 
 #endif // MAINWINDOW_H

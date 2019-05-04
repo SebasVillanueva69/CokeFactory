@@ -2,6 +2,7 @@
 #define FIRSTWINDOW_H
 
 #include <QMainWindow>
+#include "doublelinkedlist.h"
 
 namespace Ui {
 class firstWindow;
@@ -14,6 +15,8 @@ class firstWindow : public QMainWindow
 public:
     explicit firstWindow(QWidget *parent = nullptr);
     ~firstWindow();
+    doubleLinkedList *types = new doubleLinkedList();
+
 
 private slots:
     void start();

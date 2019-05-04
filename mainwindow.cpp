@@ -4,13 +4,49 @@
 #include "QLabel"
 #include "test.h"
 
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    test = new Test(this);
+    test = new Test(50,this);
 
+    setter = new Person("setter",1);
+    checker = new Person("checker",10);
+
+    cleaner = new Machine("cleaner",15);
+    filler1 = new Machine("filler",3);
+    filler2 = new Machine("filler",4);
+    capper = new Machine("capper",3);
+
+    queue1 = new Queue(5);
+    queue2 = new Queue(100);
+    queue3 = new Queue(100);
+    queue4 = new Queue(100);
+    queue5 = new Queue(100);
+    queue6 = new Queue(100);
+
+    setter->setBandNext(queue1);
+
+    cleaner->setBandPrev(queue1);
+    cleaner->setBandNext(queue2);
+    cleaner->setBandNext(queue4);
+
+    filler1->setBandPrev(queue2);
+    filler1->setBandNext(queue3);
+
+    filler2->setBandPrev(queue4);
+    filler2->setBandNext(queue5);
+
+
+    capper->setBandPrev(queue3);
+    capper->setBandPrev(queue5);
+    capper->setBandNext(queue6);
+
+    checker->setBandPrev(queue6);
+
+    connect(this,SIGNAL(status(int)),setter,SLOT(changeStatus(int)));
     connect(test,SIGNAL(bottleTaken(int)),this,SLOT(onBottleTaken(int)));
     connect(ui->play, SIGNAL (released()),this, SLOT (start()));
     connect(ui->pause, SIGNAL (released()),this, SLOT (pause()));
@@ -63,7 +99,19 @@ void MainWindow::start(){
      filled1->start();
      filled2->start();
      cap->start();
-     test->start();
+     //EMPIEZA TODOS LOS HILOS
+     setter->changeStatus(1);
+     setter->typeList = types;
+
+     setter->start();
+     //checker->start();
+
+     //cleaner->start();
+     //filler1->start();
+     //filler2->start();
+     //capper->start();
+
+     //test->start();
 }
 void MainWindow::pause(){
     //APAGA COLORES DE BOTONES SI ESTA ENCEDIDOS
@@ -92,7 +140,9 @@ void MainWindow::stop(){
      filled1->stop();
      filled2->stop();
      cap->stop();
-
+     //PARA TODOS LOS HILOS
+     setter->changeStatus(0);
+     emit status(0);
 }
 
 void MainWindow::onBottleTaken(int i)

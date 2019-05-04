@@ -8,9 +8,6 @@ public:
     Node(Bottle* data);
     Bottle *data = nullptr;
     Node *next = nullptr;
-    Node *prev = nullptr;
-
-
 };
 
 #endif // NODE_H

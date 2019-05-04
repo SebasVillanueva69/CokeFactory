@@ -3,6 +3,7 @@
 #include "ui_firstwindow.h"
 #include "iostream"
 #include "QStringListModel"
+#include "QMessageBox"
 
 using namespace std;
 firstWindow::firstWindow(QWidget *parent) :
@@ -20,10 +21,12 @@ firstWindow::firstWindow(QWidget *parent) :
 }
 void firstWindow::start(){
     MainWindow *w = new MainWindow();
+    w->types = this->types;
     w->showMaximized();
     this->hide();
 }
 void firstWindow::add(){
+    types->insert(ui->tipo->toPlainText().toStdString(),ui->proba->toPlainText().toInt());
     QString type = ui->tipo->toPlainText() +" "+ ui->proba->toPlainText()+"%";
     ui->listWidget->addItem(type);
     ui->listWidget->update();

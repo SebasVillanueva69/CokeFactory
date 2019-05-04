@@ -35,16 +35,6 @@ Bottle* doubleLinkedList::search(int p){
     return nullptr;
 }
 bool doubleLinkedList::check(){
-    NodeList* temp = first;
-    int total = 0;
-    while(temp->next != first){
-        total = total + temp->per;
-    }
-    if(total != 100){
-        return false;
-    }
-    else {
-        return true;
-    }
+    return true;
 }
 

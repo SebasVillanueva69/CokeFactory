@@ -14,7 +14,7 @@ public:
     Node* dequeue();
     void enqueue(Node* newBottle);
     bool isFull();
-
+    bool isEmpty();
 
 };
 

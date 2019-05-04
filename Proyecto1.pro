@@ -37,8 +37,7 @@ SOURCES += \
     person.cpp \
     truck.cpp \
     firstwindow.cpp \
-    test.cpp \
-    cleanerthread.cpp
+    test.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -51,8 +50,7 @@ HEADERS += \
     person.h \
     truck.h \
     firstwindow.h \
-    test.h \
-    cleanerthread.h
+    test.h
 
 FORMS += \
         mainwindow.ui \

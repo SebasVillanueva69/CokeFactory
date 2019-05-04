@@ -2,25 +2,25 @@
 #include <iostream>
 #include <QMutex>
 
-Test::Test(QObject *parent) : QThread(parent)
+Test::Test(int m , QObject *parent) : QThread(parent)
 {
-
+    this->time = m;
 }
 
 void Test::run()
 {
-    for (int i = 0; i < 100000;i++)
+    for (int i = time; i < 100;i++)
     {
         QMutex mutex;
-        mutex.lock();
+        //mutex.lock();
 
-        if (stop) break;
-        mutex.unlock();
+        //if (stop) break;
+        //mutex.unlock();
 
         emit bottleTaken(i);
+         this->sleep(1);
 
     }
 
-    this->sleep(1000);
 
 }
