@@ -18,7 +18,7 @@ public:
 signals:
     void bottleCleaned();
 public slots:
-    void onBottleCleaned();
+    //void onBottleCleaned();
 };
 
 #endif // CLEANERTHREAD_H
