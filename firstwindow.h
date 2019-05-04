@@ -17,6 +17,7 @@ public:
 
 private slots:
     void start();
+    void add();
 private:
     Ui::firstWindow *ui;
 };
